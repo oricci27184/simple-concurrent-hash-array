@@ -1,6 +1,6 @@
 {
   "name": "simple-concurrent-hash-array",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Hash array with CAS writes for lock-free updates.",
   "type": "module",
   "main": "src/index.js",
