@@ -42,3 +42,10 @@ Deletion writes a tombstone instead of clearing the slot to `null`, because clea
 ## Values and comparison
 
 `compareAndSwap` and `compareAndDelete` use `Object.is`, so `NaN` can be swapped and `-0` is distinct from `0`. `get` returns `undefined` both for a missing key and for a key whose stored value is `undefined`; use `has` when that distinction matters.
+
+## Performance
+
+The window keeps a bounded buffer, so `push` is constant time and memory does not
+grow with the length of the stream. `peak` and `trough` are linear in the window
+size, which is the trade that keeps `push` cheap.
+
